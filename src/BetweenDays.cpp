@@ -106,4 +106,5 @@ int between_days(struct node *date1head, struct node *date2head)
 			return (res * 365 + count+res2+(date1-date2);
 		}
 	}
+	/**/
 }
