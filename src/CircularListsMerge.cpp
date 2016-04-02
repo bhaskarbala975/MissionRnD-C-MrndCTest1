@@ -95,6 +95,7 @@ int merge_circularlists(struct node **head1, struct node **head2)
 		}
 	}
 	return n;
-	/*here my idea is to link two circular lists (by changing the next of last node of list1 as pointer to second list)
-	and to sort by applying bubble sort and again return the no of nodes in the merged list.. */
+	/*here my idea is to link two circular lists 
+	(by changing the next of last node of list1 as pointer to second list head)
+	and to sort by applying bubble sort and again return the no of nodes in the merged list.. and then replace null with head1 */
 }
