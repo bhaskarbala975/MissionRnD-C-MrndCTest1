@@ -91,7 +91,7 @@ int between_days(struct node *date1head, struct node *date2head)
 	{
 		if (month1 == month2)
 		{
-			res = (year1 - year2)
+			res = (year1 - year2);
 				temp = res;
 			while (temp < 4)
 			{
@@ -103,7 +103,7 @@ int between_days(struct node *date1head, struct node *date2head)
 				res2 = (res2 * 30 * -1);
 			else
 				res2 = res2 * 30;
-			return (res * 365 + count+res2+(date1-date2);
+			return (res * 365 + count+res2+(date1-date2));
 		}
 	}
 	/**/

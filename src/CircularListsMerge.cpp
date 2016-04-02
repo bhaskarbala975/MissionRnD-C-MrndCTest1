@@ -65,7 +65,6 @@ int merge_circularlists(struct node **head1, struct node **head2)
 	t3 = *head1;
 	while (t3 != NULL)
 		n++;
-	struct node *temp1, *temp2;
 	int i = 0,t=0;
 	while (i <= (n - 1))
 	{
@@ -93,6 +92,8 @@ int merge_circularlists(struct node **head1, struct node **head2)
 			t3->next = *head1;
 			break;
 		}
+		else
+			t3 = t3->next;
 	}
 	return n;
 	/*here my idea is to link two circular lists 
