@@ -85,10 +85,10 @@ int * find_sequences(int *arr, int len)
 			break;
 		}
 	}
-	int c = 1,x;
+	int c = 1,x=0;
 	for (i = result[4]; i < len; i++)
 	{
-		x = pow(rat, c);
+		
 		if (arr[i + 1] != arr[i] * x)
 		{
 			result[5] = i;
