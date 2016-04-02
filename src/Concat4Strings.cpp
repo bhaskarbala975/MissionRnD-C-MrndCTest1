@@ -28,6 +28,8 @@ Difficulty : Hard
 #include <stdio.h>
 
 char * concat_4strings(char *s1, char *s2, char *s3, char *s4){
-	//Return the new string created.
+	/*here my idea is i will generate all possible substrings for 4 strings and will check if there is any match
+	if a match for the particular string is found i will delete the substring from the main string and concatinate the remaining 
+	string to the matched string and will repeat the same for produced strings until a single string is left and return it.*/
 	return NULL;
 }

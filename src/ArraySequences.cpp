@@ -31,7 +31,71 @@ Difficulty : Medium
 #include <stdio.h>
 #include <math.h>
 
-int * find_sequences(int *arr, int len){
-	//Return final array which has 6indexes [AP1_S,AP1_E,AP2_S,AP2_E,GP1_S,GP2_E]
-	return NULL;
+int * find_sequences(int *arr, int len)
+{
+	if (len == 0)
+		return NULL;
+
+	int *result;
+	int i,diff,rat;
+	result = (int *)malloc(6 * (sizeof(int)));
+	/*check for two airthmatic progressions*/
+	for (i = 0; i < len - 1; i++)
+	{
+		diff = arr[i + 1] - arr[i];
+		if (arr[i + 1] == (arr[i] + diff))
+		{
+			result[0] = i;
+			break;
+		}
+	}
+	for (i = result[0]; i < len; i++)
+	{
+		if (arr[i] + diff != arr[i + 1])
+		{
+			result[1] = i;
+			break;
+		}
+	}
+	for (i = 0; i < len - 1; i++)
+	{
+		diff = arr[i + 1] - arr[i];
+		if ((arr[i + 1] == arr[i]) && (i != result[0]))
+		{
+			result[2] = i;
+			break;
+		}
+	}
+	for (i = result[2]; i < len; i++)
+	{
+		if (arr[i + 1] != arr[i] + diff)
+		{
+			result[3] = i;
+			break;
+		}
+	}
+
+	/*check for  geomentric progression*/
+	for (i = 0; i < len - 1; i++)
+	{
+		rat = arr[i + 1] / arr[i];
+		if (arr[i + 1] == arr[i] * rat)
+		{
+			result[4] = i;
+			break;
+		}
+	}
+	int c = 1,x;
+	for (i = result[4]; i < len; i++)
+	{
+		x = pow(rat, c);
+		if (arr[i + 1] != arr[i] * x)
+		{
+			result[5] = i;
+			break;
+		}
+		else
+			c++;
+	}
+	return result;
 }
